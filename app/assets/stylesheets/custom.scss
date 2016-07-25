@@ -110,3 +110,14 @@ input {
     color: $state-danger-text;
   }
 }
+
+
+
+footer {
+	padding: 40px 0;
+	font-size: 13px;
+	.copyright{
+		text-align: center;
+		color: #aaa;
+	}
+}
