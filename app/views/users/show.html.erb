@@ -1,6 +1,17 @@
-
 <h1>
-	<%= gravatar_for @user %>
-	<%= @user.name %>
+	Profile
 </h1>
 
+<h4>
+	<%= gravatar_for @user %>
+	<%= @user.name %>
+</h4>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Email</h3>
+	</div>
+	<div class="panel-body">
+		<%= @user.email %>
+	</div>
+</div>
