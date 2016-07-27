@@ -3,4 +3,5 @@ class Link < ActiveRecord::Base
   validates :user_id, presence: true
   validates :url, presence: true, length: { maximum: 140 }
   validates :bunrui, presence: true
+  has_many   :origin
 end

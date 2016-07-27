@@ -8,7 +8,7 @@
 				<li><%= link_to "ログイン", login_path %></li>
 			<% else %>
 				<li>
-					<%= link_to "#" do %>
+					<%= link_to new_link_path(current_user) do %>
 					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 					リンクを追加
 					<% end %>
