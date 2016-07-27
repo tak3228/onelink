@@ -1,9 +1,11 @@
 <%= form_for(@link) do |f| %>
 <%= render 'shared/error_messages', object: f.object %>
 <div class="field">
+    <%= f.label :URL %>
     <%= f.text_field :url, placeholder: "URL..." %>
+    <%= f.label :タイトル %>
     <%= f.text_field :title, placeholder: "title..." %>
-    <%= f.label :origin_id %>
+    <%= f.label :分類 %>
     <%= f.collection_select :id, Origin.all, :id, :content %>
 </div>
 <%= f.submit "作成", class: "btn btn-primary" %>
