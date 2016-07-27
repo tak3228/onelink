@@ -6,16 +6,23 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = Link.new
-    @link.url = params[:link][:url]
-    @link.title = params[:link][:title]
-    @link.bunrui = params[:link][:id]
-    if
-      @link.save
+    @link = Link.new(link_params)
+    @link.user_id = current_user.id
+    # @link.url = params[:link][:url]
+    # @link.title = params[:link][:title]
+    # @link.bunrui = params[:link][:id]
+    if @link.save
       flash[:success] = 'リンクが作成されました'
       redirect_to root_path
     else
-      redirect_to new_link_path
+      render 'new'
+      # redirect_to new_link_path ←リダイレクトさせてしまうと@link.errorsの内容が消えてしまう
     end
+  end
+  
+  private
+  
+  def link_params
+    params.require(:link).permit(:url, :title, :bunrui)
   end
 end
