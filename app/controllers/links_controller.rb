@@ -1,19 +1,17 @@
 class LinksController < ApplicationController
 	before_action :logged_in_user, only: [:new]
 
-	def create 
-		@link = current_user.links.build(link_params)
+	def new 
+		@link = current_user.links.build
 		if @link.save
 			flash[:success] = "リンクが作成されました"
-			redirect_to root_url
-		else
-			render 'static_pages/home'
-		end
+
+
+		render 'links/new'
+		
 	end
 
-	private
-	def link_params
-		params.require(:link).permit(:url, :title, :bunrui)
-	end
 
+	end
 end
+
