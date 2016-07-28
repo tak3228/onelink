@@ -8,7 +8,8 @@ class LinksController < ApplicationController
   def create
     @link = Link.new(link_params)
     @link.user_id = current_user.id
-    # @link.url = params[:link][:url]
+    #@link.url = params[:link][:url]
+    @link.title = @link.getpagetitle
     # @link.title = params[:link][:title]
     # @link.bunrui = params[:link][:id]
     if @link.save
@@ -19,6 +20,8 @@ class LinksController < ApplicationController
       # redirect_to new_link_path ←リダイレクトさせてしまうと@link.errorsの内容が消えてしまう
     end
   end
+  
+
   
   private
   
