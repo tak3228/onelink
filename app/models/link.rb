@@ -10,7 +10,7 @@ class Link < ActiveRecord::Base
 
   def getpagetitle
 
-    charset = nil
+    charset = 'utf-8'
     html = open(url) do |f|
       charset = f.charset # 文字種別を取得
       f.read # htmlを読み込んで変数htmlに渡す

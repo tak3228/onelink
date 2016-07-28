@@ -3,8 +3,8 @@
 <div class="field">
     <%= f.label :URL %>
     <%= f.text_field :url, placeholder: "URL..." %>
-    <%= f.label :タイトル %>
-    <%= f.text_field :title, placeholder: "title..." %>
+
+
     <%= f.label :分類 %>
     <%= f.collection_select :bunrui, Origin.all, :id, :content %>
 </div>

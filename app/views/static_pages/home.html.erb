@@ -1,21 +1,21 @@
 <% if logged_in? %>
-<div class="row">
-    <aside class="col-md-4">
-        <section class="user_info">
-		<%= render 'shared/user_info' %>
-		<% img = "http://capture.heartrails.com/200x200/cool?" %>
-		<% @link.each do |link| %>
-			<%= link_to image_tag( img + link.url ),link.url %>
-			<%= link_to link.title, link.url %>
-			<hr>
-		<% end %>
-        </section>
-    </aside>
-</div>
+	<div class="row">
+		<aside class="col-md-4">
+			<section class="user_info">
+				<%= render 'shared/user_info' %>
+				<% img = "http://capture.heartrails.com/200x200/cool?" %>
+				<% @links.each do |link| %>
+					<%= link_to image_tag( img + link.url ),link.url %>
+					<%= link_to link.title, link.url %>
+					<hr>
+				<% end %>
+			</section>
+		</aside>
+	</div>
 <% else %>
-<div class="center jumbotron">
-    <h1>ようこそOneLinkへ</h1>
+	<div class="center jumbotron">
+		<h1>ようこそOneLinkへ</h1>
 
-    <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+		<%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-primary" %>
+	</div>
 <% end %>
