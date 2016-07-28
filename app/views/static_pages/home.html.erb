@@ -2,7 +2,13 @@
 <div class="row">
     <aside class="col-md-4">
         <section class="user_info">
-            <%= render 'shared/user_info' %>
+		<%= render 'shared/user_info' %>
+		<% img = "http://capture.heartrails.com/200x200/cool?" %>
+		<% @link.each do |link| %>
+			<%= link_to image_tag( img + link.url ),link.url %>
+			<%= link_to link.title, link.url %>
+			<hr>
+		<% end %>
         </section>
     </aside>
 </div>
