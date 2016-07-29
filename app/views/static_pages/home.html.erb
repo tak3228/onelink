@@ -5,9 +5,14 @@
 				<%= render 'shared/user_info' %>
 				<% img = "http://capture.heartrails.com/200x200/cool?" %>
 				<% @links.each do |link| %>
-					<%= link_to image_tag( img + link.url ),link.url %>
-					<%= link_to link.title, link.url %>
-					<hr>
+					<div class="item-box">
+						<div class="image">
+							<div class="img-wrap">
+								<%= link_to image_tag( img + link.url ),link.url %>
+								<%= link_to link.title, link.url %>
+							</div>
+						</div>
+					</div>
 				<% end %>
 			</section>
 		</aside>
