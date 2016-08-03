@@ -1,8 +1,14 @@
 class StaticPagesController < ApplicationController
-	def home
-		if logged_in? 
-			@link = current_user.links.build if logged_in?
-			@links = current_user.links.all
-		end
-	end
+  def home
+	  @link = current_user.links.build if logged_in?
+	  
+	  
+	 # @links = Link.all
+	 @links = []
+	 bunruis = Origin.all.pluck(:id)
+	 bunruis.each do |bunrui|
+	     link_temp = Link.where(bunrui: bunrui).flatten
+	     @links << link_temp
+     end
+  end
 end
