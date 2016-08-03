@@ -2,10 +2,23 @@
 @import "bootstrap";
 /* universal */
 body {
-    padding-top: 60px;
+    color: rgb(216, 221, 218);
+    margin: 0;
+    padding: 50px 0;
+    width: 100%;
+    height: 100vh;
     background-image: url("https://cldup.com/eP13cQZy4t.jpg");
     background-repeat: no-repeat;
-    color: rgb(216, 221, 218);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
 }
 section {
     overflow: auto;
@@ -14,16 +27,18 @@ textarea {
     resize: vertical;
 }
 footer {
-    padding: 40px 0;
-    height: 50px;
     font-size: 13px;
-    background-color: rgba(11, 11, 11, 0.7);
+    background-color: rgba(11, 11, 11, 0.55);
     color: #aaa;
-    height: 70px;
     text-align: center;
+    position: fixed;
     bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    .copyright {
+        margin-top: 7px;
+    }
 }
 .col-md-4 {
     width: 100%;
@@ -32,7 +47,7 @@ footer {
     background-color: rgba(11, 11, 11, 0.7);
 }
 .dropdown-menu {
-    background-color: rgba(171, 237, 111, 0.5);
+    background-color: rgba(171, 237, 111, 0.4);
 }
 .center {
     text-align: center;
@@ -43,7 +58,10 @@ footer {
 /* typography */
 h1,
 h2,
-h3,
+h3 {
+    text-align: left;
+    margin-left: 50px;
+}
 h4,
 h5,
 h6 {
@@ -142,31 +160,34 @@ aside {
     }
 }
 .item-box {
-    width: 200px;
+    width: 220px;
+    height: 220px;
     margin: 15px;
     float: left;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     position: relative;
     .image {
-        width: 180px;
-        height: 180px;
+        width: 220px;
+        height: 220px;
         display: table;
         border: 1px solid #ddd;
         background: rgba(0,0,0,0.4);
         border-top-right-radius: 3px;
         border-top-left-radius: 3px;
         .img-wrap {
-            width: 270px;
-            height: 270px;
+            width: 220px;
+            height: 220px;
             padding: 10px;
             display: table-cell;
             vertical-align: middle;
             text-align: center;
             a {
                 color: rgb(127, 191, 223);
-            }
-            img {
-                max-height: 250px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
             }
         }
     }
@@ -185,4 +206,22 @@ aside {
 }
 .jumbotron {
     background: rgba(0,0,0,0.4);
+}
+.navbar-toggle {
+    display: none;
+}
+.collapse {
+    display: block;
+    border-color: transparent;
+}
+/* navbar-leftの場合はここをleftに変える */
+.navbar-right {
+    float: right;
+}
+.navbar-nav {
+    margin: 0 -15px 0 0;
+}
+.navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
