@@ -1,16 +1,17 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
 	<div class="container">
-		<%= link_to "Onelink", root_path, id: "logo" %>
-		<nav>
-			<ul class="nav navbar-nav navbar-right">
-				<% unless logged_in? %>
-					<li><%= link_to "新規登録", signup_path %></li>
+		<div class="row">
+			<%= link_to "Onelink", root_path, id: "logo" %>
+			<nav>
+				<ul class="nav navbar-nav navbar-right">
+					<% unless logged_in? %>
+					<li><%= link_to "新規登録" , signup_path %></li>
 					<li><%= link_to "ログイン", login_path %></li>
 				<% else %>
 					<li>
 						<%= link_to new_link_path(current_user) do %>
-							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-							リンクを追加
+						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+						リンクを追加
 						<% end %>
 					</li>
 					<li class="dropdown">
@@ -27,7 +28,8 @@
 								<%= link_to "ログアウト", logout_path, method: "delete" %>
 							</li>
 						</ul>
-					</li>
+					</div>
+				</li>
 				<% end %>
 			</ul>
 		</nav>

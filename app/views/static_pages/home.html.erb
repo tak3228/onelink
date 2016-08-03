@@ -1,32 +1,33 @@
 <% if logged_in? %>
-	<div class="row">
-		<aside class="col-md-4">
-			<section class="user_info">
-				<%= render 'shared/user_info' %>
-				<% img = "http://capture.heartrails.com/200x200/cool?" %>
-				<% @links.each do |link| %>
-					<div class="row">
-						<h3>タイトル</h3>
-						<% link.each do |elm| %>
-							<div class="item-box">
-								<div class="image">
-									<div class="img-wrap">
-										<%= link_to image_tag( img + elm.url ),elm.url %>
-										<%= link_to elm.title, elm.url %>
-									</div>
-								</div>
-							</div>
-						<% end %>
+<div class="row">
+	<aside class="col-md-4">
+		<section class="user_info">
+			<%= render 'shared/user_info' %>
+			<% img = "http://capture.heartrails.com/200x200/cool?" %>
+			<% @links.each do |link| %>
+				<div class="row">
+					<% bunrui = link.first.bunrui %>
+						<h3><%= Origin.find(bunrui).content %></h3>
+				<% link.each do |elm| %>
+				<div class="item-box">
+					<div class="image">
+						<div class="img-wrap">
+							<%= link_to image_tag( img + elm.url ),elm.url,:target=>["_blank"] %>
+							<%= link_to elm.title, elm.url,:target=>["_blank"] %>
+						</div>
 					</div>
+				</div>
 				<% end %>
-			</section>
-		</aside>
-	</div>
-	</div>
+			</div>
+			<% end %>
+		</section>
+	</aside>
+</div>
+</div>
 <% else %>
-	<div class="center jumbotron">
-		<h1>ようこそOneLinkへ</h1>
+<div class="center jumbotron">
+<h1>ようこそOneLinkへ</h1>
 
-		<%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-primary" %>
-	</div>
+<%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
 <% end %>
