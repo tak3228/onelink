@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
     bunruis = Origin.all.pluck(:id)
     bunruis.each do |bunrui|
       link_temp = current_user.links.where(bunrui: bunrui).flatten if logged_in?
-      @links << link_temp
+      @links << link_temp.reverse
     end
   end
 end
