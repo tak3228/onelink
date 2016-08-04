@@ -20,6 +20,12 @@ class LinksController < ApplicationController
       # redirect_to new_link_path ←リダイレクトさせてしまうと@link.errorsの内容が消えてしまう
     end
   end
+  
+  def destroy
+    @link = Link.find(params[:id])
+    @link.destroy
+    redirect_to :root
+  end
 
 
   private

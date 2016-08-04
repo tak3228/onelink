@@ -16,7 +16,8 @@
 					<div class="image">
 						<div class="img-wrap">
 							<%= link_to image_tag( img + elm.url ),elm.url,:target=>["_blank"] %>
-							<%= link_to elm.title, elm.url,:target=>["_blank"] %>
+							<%= link_to elm.title, elm.url,:target=>["_blank"], class:"tempinline" %>
+							<%= link_to "削除", link_path(elm.id), :method => "delete", class:"tempinline" %>
 						</div>
 					</div>
 				</div>
