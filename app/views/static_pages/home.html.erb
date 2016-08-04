@@ -6,8 +6,11 @@
 			<% img = "http://capture.heartrails.com/200x200/cool?" %>
 			<% @links.each do |link| %>
 				<div class="row">
+					<br>
+					<% if link.first.present? %>
 					<% bunrui = link.first.bunrui %>
-						<h3><%= Origin.find(bunrui).content %></h3>
+					<h3><%= Origin.find(bunrui).content %></h3>
+				<% end %>
 				<% link.each do |elm| %>
 				<div class="item-box">
 					<div class="image">
