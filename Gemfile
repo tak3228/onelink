@@ -25,8 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
+gem 'pry-byebug', group: :deve
+# Use Uni'orn as the app server
 # gem 'unicorn'
 gem 'mechanize'
 # Use Capistrano for deployment

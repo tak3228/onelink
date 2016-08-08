@@ -8,7 +8,7 @@ body {
     padding: 50px;
     width: 100%;
     height: 100vh;
-    background-image: url("https://cldup.com/eP13cQZy4t.jpg");
+    background-image: image-url("back.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -136,6 +136,12 @@ input {
         color: $state-danger-text;
     }
 }
+.glyphicon-trash {
+    width: 25px;
+    float: right;
+    margin-left: 185px;
+    text-align: right;
+}
 .item-box {
     width: 220px;
     height: 220px;
@@ -195,6 +201,9 @@ input {
 .panel-body {
     color: rgb(216, 221, 218);
 }
+.panel-title {
+    text-shadow: none;
+}
 .jumbotron {
     background: rgba(0,0,0,0.4);
     margin-top: 80px;
@@ -202,12 +211,6 @@ input {
 /* navbar-leftの場合はここをleftに変える */
 .navbar-right {
     float: right;
-}
-.glyphicon-trash {
-    width: 25px;
-    float: right;
-    margin-left: 185px;
-    text-align: right;
 }
 .waku {
     padding-bottom: 50px;
