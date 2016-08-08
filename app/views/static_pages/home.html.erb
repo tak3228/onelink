@@ -14,7 +14,7 @@
 			<div class="image">
 				<div class="img-wrap">
 					<%= link_to image_tag( img + elm.url ),elm.url,:target=>["_blank"] %>
-					<%= link_to elm.title, elm.url,:target=>["_blank"] %>
+					<%= link_to truncate(elm.title, length:16), elm.url,:target=>["_blank"] %>
 					<%= link_to "", link_path(elm.id), :method => "delete",
 									class: "glyphicon glyphicon-trash", data: { confirm: '削除してもよろしいですか？'} %>
 				</div>
