@@ -3,6 +3,7 @@
 /* universal */
 body {
     color: rgb(216, 221, 218);
+    text-shadow: 1px 1px 3px #000;
     margin: 0;
     padding: 50px;
     width: 100%;
@@ -45,6 +46,7 @@ footer {
 }
 .dropdown-menu {
     background-color: rgba(171, 237, 111, 0.4);
+    text-shadow: none;
 }
 .center {
     text-align: center;
@@ -62,7 +64,9 @@ h3 {
 h4 {
     float: right;
 }
-h5,
+h5 a {
+    color: rgb(80, 170, 228);
+}
 h6 {
     line-height: 1;
 }
@@ -141,7 +145,7 @@ input {
     position: relative;
     .image {
         display: table;
-        border: 1px solid #ddd;
+        border: 1px solid rgb(178, 179, 177);
         background: rgba(0,0,0,0.4);
         border-top-right-radius: 3px;
         border-top-left-radius: 3px;
@@ -193,6 +197,7 @@ input {
 }
 .jumbotron {
     background: rgba(0,0,0,0.4);
+    margin-top: 80px;
 }
 /* navbar-leftの場合はここをleftに変える */
 .navbar-right {
@@ -210,4 +215,12 @@ input {
     margin-top: 50px;
     float: right;
     background-color: rgba(84, 191, 224, 0.8);
+}
+.btn-primary {
+    float: none;
+}
+.alert {
+    opacity: 0.8;
+    text-shadow: none;
+    color: none;
 }

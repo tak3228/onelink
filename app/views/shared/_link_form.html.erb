@@ -4,7 +4,6 @@
 		<%= f.label :URL %>
 		<%= f.text_field :url, placeholder: "URL..." %>
 
-
 		<%= f.label :分類 %>
 		<%= f.collection_select :bunrui, Origin.all, :id, :content %>
 	</div>
