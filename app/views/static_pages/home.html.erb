@@ -4,10 +4,11 @@
 	<% img = "http://capture.heartrails.com/200x200/cool?" %>
 	<% @links.each do |link| %>
 	<div class="row">
-		<br>
 		<% if link.first.present? %>
 		<% bunrui = link.first.bunrui %>
-		<h3><%= Origin.find(bunrui).content %></h3>
+		<div class="daimei">
+			<h3><%= Origin.find(bunrui).content %></h3>
+		</div>
 		<% end %>
 		<% link.each do |elm| %>
 		<div class="item-box">
@@ -15,8 +16,11 @@
 				<div class="img-wrap">
 					<%= link_to image_tag( img + elm.url ),elm.url,:target=>["_blank"] %>
 					<%= link_to truncate(elm.title, length:16), elm.url,:target=>["_blank"] %>
-					<%= link_to "", link_path(elm.id), :method => "delete",
-									class: "glyphicon glyphicon-trash", data: { confirm: '削除してもよろしいですか？'} %>
+					<div class="aicon">
+						<%= link_to "", link_path(elm.id), :method => "delete",
+										class: "glyphicon glyphicon-trash", data: { confirm: '削除してもよろしいですか？'} %>
+						<%= link_to "" , edit_link_path(elm.id) , class: "glyphicon glyphicon-pencil" %>
+					</div>
 				</div>
 			</div>
 		</div>
