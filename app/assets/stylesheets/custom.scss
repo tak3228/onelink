@@ -90,17 +90,6 @@ p {
 /* header */
 #logo {
     float: left;
-    margin-right: 10px;
-    font-size: 1.7em;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    padding-top: 9px;
-    font-weight: bold;
-}
-#logo:hover {
-    color: #fff;
-    text-decoration: none;
 }
 /* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
@@ -223,6 +212,12 @@ input {
 /* navbar-leftの場合はここをleftに変える */
 .navbar-right {
     float: right;
+    #link-add {
+        padding-bottom: 35px;
+    }
+    span {
+        font-weight: bold;
+    }
 }
 .waku {
     padding-bottom: 50px;

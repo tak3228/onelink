@@ -11,7 +11,8 @@ class LinksController < ApplicationController
 	def update
 		if @link.update(link_params)
 			# 保存に成功した場合はトップページへリダイレクト
-			redirect_to root_path , notice: 'メッセージを編集しました'
+			flash[:success] = '変更を保存しました'
+			redirect_to root_path 
 		else
 			# 保存に失敗した場合は編集画面へ戻す
 			render 'edit'
