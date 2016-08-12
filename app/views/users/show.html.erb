@@ -4,13 +4,13 @@
 <h4><span>Total：<%= pluralize(current_user.links.count, "link") %></h4>
 
 <h3>
-	<span class="glyphicon glyphicon-user" aria-hidden="true"></span>	
+	<span class="glyphicon glyphicon-user edit-icon" aria-hidden="true"></span>	
 	<%= @user.name %>
 </h3>
 
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Email</h3>
+		<h3 class="panel-title">メールアドレス</h3>
 	</div>
 	<div class="panel-body">
 		<%= @user.email %>

@@ -1,2 +1,12 @@
-	<h1>リンク登録</h1>
-	<%= render 'shared/link_form' %>
+<h1>リンク登録</h1>
+<%= form_for(@link) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<div class="field">
+	<%= f.label :URL %>
+	<%= f.text_field :url, placeholder: "http or https..." %>
+
+	<%= f.label :分類 %>
+	<%= f.collection_select :bunrui, Origin.all, :id, :content %>
+</div>
+<%= f.submit "作成", class: "btn btn-primary" %>
+<% end %>

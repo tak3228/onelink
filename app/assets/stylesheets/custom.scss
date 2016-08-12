@@ -129,6 +129,9 @@ input {
     padding-right: 3px;
     margin: 2px;
 }
+.edit-icon {
+    float: left;
+}
 .aicon {
     overflow: hidden;
 }
@@ -198,12 +201,17 @@ input {
 .panel {
     background: rgba(0,0,0,0.4);
     margin: 30px;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
 }
 .panel-body {
     color: rgb(216, 221, 218);
 }
 .panel-title {
     text-shadow: none;
+    text-align: center;
+    margin: auto;
 }
 .jumbotron {
     background: rgba(0,0,0,0.4);
