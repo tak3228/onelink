@@ -5,7 +5,6 @@ class Link < ActiveRecord::Base
   validates :user_id, presence: true
   validates :url, presence: true, format: /\A#{URI.regexp(%w(http https))}\z/
   validates :bunrui, presence: true
-	validates :title, presence: true
   has_many :origin
 
   def get_page_title
