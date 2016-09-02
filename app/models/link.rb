@@ -3,8 +3,11 @@ require 'open-uri'
 class Link < ActiveRecord::Base
   belongs_to :user
   validates :user_id, presence: true
-  validates :url, presence: true, format: /\A#{URI.regexp(%w(http https))}\z/
+  validates :url, presence: true,
+									format: /\A#{URI.regexp(%w(http https))}\z/,
+									uniqueness: { case_sensitive: false }
   validates :bunrui, presence: true
+	validates :title, presence: true, on: :update
   has_many :origin
 
   def get_page_title

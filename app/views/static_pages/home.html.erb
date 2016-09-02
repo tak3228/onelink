@@ -1,6 +1,6 @@
 <% if logged_in? %>
 <div class="container-fluid">
-	<% img = "http://capture.heartrails.com/200x200/cool?" %>
+	<% img = "http://capture.heartrails.com/200x200/border?" %>
 	<% @links.each do |link| %>
 	<div class="row">
 		<% if link.first.present? %>
@@ -13,8 +13,8 @@
 		<div class="item-box">
 			<div class="image">
 				<div class="img-wrap">
-					<%= link_to image_tag( img + elm.url ),elm.url,:target=>["_blank"] %>
-					<%= link_to truncate(elm.title, length:16), elm.url,:target=>["_blank"] %>
+					<%= link_to image_tag( img + elm.url ), elm.url, :target => "_blank", class: "nonmover" %>
+					<%= link_to elm.title, elm.url, :target => "_blank", class: "nonmover" %>
 					<div class="aicon">
 						<%= link_to "", link_path(elm.id), :method => "delete",
 										class: "glyphicon glyphicon-trash", data: { confirm: '削除してもよろしいですか？'} %>

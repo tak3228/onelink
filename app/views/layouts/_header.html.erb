@@ -9,9 +9,14 @@
 					<li><%= link_to "ログイン", login_path %></li>
 				<% else %>
 					<li>
-						<%= link_to new_link_path(current_user), id: "link-add" do %>
-							<span class="glyphicon glyphicon-plus" aria-hidden="true">
-								リンクを追加</span>
+						<%= link_to root_path(current_user), class: "link-add" do %>
+						<span class="glyphicon glyphicon-home" aria-hidden="true">Home</span>
+					</li>
+					<% end %>
+					<li>
+						<%= link_to new_link_path(current_user), class: "link-add" do %>
+						<span class="glyphicon glyphicon-plus" aria-hidden="true">
+							リンクを追加</span>
 						<% end %>
 					</li>
 					<li class="dropdown">
