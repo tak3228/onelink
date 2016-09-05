@@ -6,7 +6,8 @@
 		<% if link.first.present? %>
 		<% bunrui = link.first.bunrui %>
 		<div class="daimei">
-			<h3><%= Origin.find(bunrui).content %></h3>
+			<% @tag = Origin.find(bunrui).content %>
+			<h3><div class="glyphicon glyphicon-tags"><%= @tag %></h3>
 		</div>
 	<% end %>
 		<% link.each do |elm| %>

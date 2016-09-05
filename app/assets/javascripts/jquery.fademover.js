@@ -1,9 +1,3 @@
-/* Copyright (c) 2011 detelu (http://www.detelu.com)
- * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
- * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
- * jquery.fademover.js
- * Version: 2012-02-06
-*/
 (function($){
 	$.fn.fadeMover = function(options) {
 		var defaults = {

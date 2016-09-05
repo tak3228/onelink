@@ -1,0 +1,48 @@
+<h1>タグ編集</h1>
+
+<div class="tag_link_num">
+	<h4>
+		<span>Total:
+			<%= pluralize(@links.count, "links") %></span>
+	</h4>
+</div>
+
+<% if @links.empty? %>
+<%= link_to "", origin_path(@origin.id), :method => "delete", class: "glyphicon glyphicon-remove-circle", data: { confirm: '削除してもよろしいですか？' } %>
+<% else %>
+<%= link_to "", origin_path(@origin.id), class: "glyphicon glyphicon-question-sign", data: { confirm: 'このタグで設定されているリンクが存在します、削除するには該当リンクのタグを変更してください。' } %>
+<% end %>
+
+<%= form_for(@origin) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<div class="field">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">旧タグ名</h3>
+		</div>
+		<div class="panel-body">
+			<%= @origin.content %>
+		</div>
+	</div>
+	<%= f.label :新タグ名 %>
+	<%= f.text_field :content, placeholder: "お気に入り" %>
+</div>
+<%= f.submit "更新", class: "btn btn-primary" %>
+<% img = "http://capture.heartrails.com/200x200/border?" %>
+<% @links.each do |k| %>
+<div class="tag_waku">
+	<div class="item-box">
+		<div class="image">
+			<div class="img-wrap">
+				<%= link_to image_tag( img + k.url ), k.url, :target => "_blank", class: "nonmover" %>
+				<%= link_to k.title, k.url, :target => "_blank", class: "nonmover" %>
+				<div class="aicon">
+					<%= link_to "", link_path(k.id), :method => "delete",
+										class: "glyphicon glyphicon-trash", data: { confirm: '削除してもよろしいですか？'} %>
+					<%= link_to "" , edit_link_path(k.id) , class: "glyphicon glyphicon-pencil" %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% end %>
+	<% end %>
