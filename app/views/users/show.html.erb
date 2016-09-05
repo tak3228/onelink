@@ -17,4 +17,18 @@
 	<div class="panel-body">
 		<%= @user.email %>
 	</div>
+	<div class="panel-heading">
+		<h3 class="panel-title">Myタグ</h3>
+		</div>
+		<div class="panel-body">
+			<% @tags = Origin.where(user_id: @current_user.id) %>
+			<% @tags.each do |f| %>
+				<ul><%= f.content %>
+				<%= link_to "", origin_path(f.id), :method => "delete", class: "glyphicon glyphicon-trash", data: { confirm: 'タグ付けされているリンクも非表示となります。削除してもよろしいですか？' } %></ul>
+				<hr>
+			<% end %>
+			<% if @tags.empty? %>
+				タグが設定されていません
+			<% end %>
+	</div>
 </div>

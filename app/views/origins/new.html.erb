@@ -1,0 +1,10 @@
+<h1>タグ追加</h1>
+<%= form_for(@origin) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<div class="field">
+	<%= f.label :タグ名 %>
+	<%= f.text_field :content, placeholder: "お気に入り" %>
+
+</div>
+<%= f.submit "追加", class: "btn btn-primary" %>
+<% end %>

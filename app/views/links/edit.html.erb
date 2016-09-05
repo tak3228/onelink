@@ -19,7 +19,7 @@
 		<%= f.text_field :title %>
 
 		<%= f.label :分類 %>
-		<%= f.collection_select :bunrui, Origin.all, :id, :content %>
+			<%= f.collection_select :bunrui, Origin.where(user_id: User.find_by(id: session[:user_id])) + Origin.where(user_id: nil), :id, :content %>
 	</div>
 	<%= f.submit "更新", class: "btn btn-primary" %>
 <% end %>

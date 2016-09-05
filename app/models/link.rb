@@ -4,8 +4,7 @@ class Link < ActiveRecord::Base
   belongs_to :user
   validates :user_id, presence: true
   validates :url, presence: true,
-									format: /\A#{URI.regexp(%w(http https))}\z/,
-									uniqueness: { case_sensitive: false }
+									format: /\A#{URI.regexp(%w(http https))}\z/
   validates :bunrui, presence: true
 	validates :title, presence: true, on: :update
   has_many :origin

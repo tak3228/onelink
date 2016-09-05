@@ -222,6 +222,11 @@ input {
     background-color: rgba(255, 255, 255, 0.7);
 }
 
+#origin_content {
+    color: rgb(51, 51, 50);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
 #user_name {
     color: rgb(51, 51, 50);
     background-color: rgba(255, 255, 255, 0.7);
@@ -317,4 +322,26 @@ input {
 
 .glyphicon-home::before {
     margin-right: 10px;
+}
+
+.glyphicon-trash::before {
+    color: rgb(206, 208, 209);
+}
+
+.announce {
+    float: right;
+    border: inset thin;
+    background-color: rgba(155, 155, 155, 0.5);
+    margin-top: 40px;
+    border-radius: 10px;
+    /* CSS3草案 */
+    -webkit-border-radius: 10px;
+    /* Safari,Google Chrome用 */
+    -moz-border-radius: 10px;
+    /* Firefox用 */
+    .up {
+        margin-left: 120px;
+        color: rgb(231, 89, 93);
+        font-weight: bold;
+    }
 }

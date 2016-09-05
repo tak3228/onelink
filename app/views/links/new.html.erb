@@ -6,7 +6,10 @@
 	<%= f.text_field :url, placeholder: "http or https..." %>
 
 	<%= f.label :分類 %>
-	<%= f.collection_select :bunrui, Origin.all, :id, :content %>
+	<%= f.collection_select :bunrui, Origin.where(user_id: @current_user.id) + Origin.where(user_id: nil), :id, :content %>
 </div>
 <%= f.submit "作成", class: "btn btn-primary" %>
+
+
+
 <% end %>
