@@ -69,8 +69,8 @@ h3 {
     margin-left: 50px;
 
     .name {
-        margin-left: 21.5%;
-        margin-top: 8%;
+        margin-left: 44%;
+        margin-top: 3%;
     }
 }
 
@@ -324,7 +324,15 @@ input {
     margin-right: 10px;
 }
 
+.glyphicon-tags::before {
+    margin-right: 10px;
+}
+
 .glyphicon-trash::before {
+    color: rgb(206, 208, 209);
+}
+
+.glyphicon-wrench::before {
     color: rgb(206, 208, 209);
 }
 
@@ -340,8 +348,36 @@ input {
     -moz-border-radius: 10px;
     /* Firefox用 */
     .up {
-        margin-left: 120px;
+        margin-right: 90px;
         color: rgb(231, 89, 93);
         font-weight: bold;
     }
+}
+
+.tag_waku {
+    margin: 150px;
+}
+
+.tag_link_num {
+    padding-bottom: 30px;
+}
+
+.prof_tag_num {
+    float: none;
+    margin-left: 290px;
+    padding-top: 30px;
+}
+
+.glyphicon-remove-circle::before {
+    color: rgb(206, 208, 209);
+    font-size: 25px;
+}
+
+.glyphicon-question-sign::before {
+    color: rgb(206, 208, 209);
+    font-size: 25px;
+}
+
+.glyphicon-tags {
+    float: none;
 }

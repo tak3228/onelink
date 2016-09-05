@@ -1,34 +1,25 @@
 <h1>
 	プロフィール
 </h1>
-<h4><span>Total：<%= pluralize(current_user.links.count, "link") %></h4>
+<h4>
+	<span>Total：<%= pluralize(current_user.links.count, "link") %></h4>
+	<h4 class="prof_tag_num">
+		Total:
+		<%= pluralize(current_user.origins.count, "tags") %>
+	</h4>
 
-<h3>
-	<div class="name">
-	<span class="glyphicon glyphicon-user edit-icon" aria-hidden="true"></span>	
-	<%= @user.name %>
-	</div>
-</h3>
+	<h3>
+		<div class="name">
+			<span class="glyphicon glyphicon-user edit-icon" aria-hidden="true"></span>
+			<%= @user.name %>
+		</div>
+	</h3>
 
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">メールアドレス</h3>
-	</div>
-	<div class="panel-body">
-		<%= @user.email %>
-	</div>
-	<div class="panel-heading">
-		<h3 class="panel-title">Myタグ</h3>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">メールアドレス</h3>
 		</div>
 		<div class="panel-body">
-			<% @tags = Origin.where(user_id: @current_user.id) %>
-			<% @tags.each do |f| %>
-				<ul><%= f.content %>
-				<%= link_to "", origin_path(f.id), :method => "delete", class: "glyphicon glyphicon-trash", data: { confirm: 'タグ付けされているリンクも非表示となります。削除してもよろしいですか？' } %></ul>
-				<hr>
-			<% end %>
-			<% if @tags.empty? %>
-				タグが設定されていません
-			<% end %>
+			<%= @user.email %>
+		</div>
 	</div>
-</div>
