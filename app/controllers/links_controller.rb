@@ -1,12 +1,12 @@
 class LinksController < ApplicationController
 	before_action :logged_in_user, only: [:new, :create]
 	before_action :set_link, only: [:edit, :update]
-
 	def new
 		@link = Link.new
 	end
 
 	def edit
+		@user_id = @current_user
 	end
 	def update
 		if @link.update(link_params)
@@ -18,6 +18,7 @@ class LinksController < ApplicationController
 	end
 
 	def create
+
 		@link = Link.new(link_params)
 		@link.user_id = current_user.id
 		if @link.valid?(:url)#valid?はrailsで有効であるかどうか検証する、単独使用可。
