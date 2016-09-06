@@ -1,29 +1,29 @@
 <h1>タグ一覧</h1>
 
 <h4>
-    <span>Total:
-        <%= pluralize(current_user.origins.count, "tags") %></span>
+	<span>Total:
+		<%= pluralize(current_user.origins.count, "tags") %></span>
 </h4>
 
 <div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">Myタグ</h3>
-    </div>
-    <div class="panel-body">
+	<div class="panel-heading">
+		<h3 class="panel-title">Myタグ</h3>
+	</div>
+	<div class="panel-body">
 
-        <% @tags = Origin.where(user_id: @current_user.id) %>
-        <% @origin = Link.where(bunrui: @tags) %>
-        <% @tags.each do |f| %>
-        <ul>
-            <%= f.content %>
-            <%= link_to "", edit_origin_path(f.id), class:"glyphicon glyphicon-wrench" %>
-        </ul>
-        <hr>
-        <% end %>
+		<% @tags.each do |f| %>
+		<ul>
+			<%= f.content %>
+			<%= link_to "", edit_origin_path(f.id), class:"glyphicon glyphicon-wrench" %>
+		</ul>
+		<hr>
+		<% end %>
 
-        <% if @tags.empty? %>
-        *タグが設定されていません*
-        <% end %>
-    </div>
+		<% if @tags.empty? %>
+		*タグが設定されていません*
+		<% end %>
+
+	</div>
 </div>
+
 <%= link_to "タグ追加", new_origin_path(current_user), class: "btn btn-primary" %>

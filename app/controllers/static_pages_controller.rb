@@ -1,7 +1,6 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @link = current_user.links.build if logged_in?
     @links = []
     bunruis = Origin.all.pluck(:id)
     bunruis.each do |bunrui|

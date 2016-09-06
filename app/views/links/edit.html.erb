@@ -1,27 +1,26 @@
 <h1>編集</h1>
 
-<% img = "http://capture.heartrails.com/200x200/border?" %>
 <div class="editpic">
-	<%= image_tag( img + @link.url ) %> 
+	<%= image_tag( img_gen + @link.url ) %>
 </div>
+
 <%= form_for(@link) do |f| %>
-	<%= render 'shared/error_messages', object: f.object %>
-	<div class="field">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">URL</h3>
-			</div>
-			<div class="panel-body">
-				<%= @link.url %>
-			</div>
+<%= render 'shared/error_messages', object: f.object %>
+<div class="field">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">URL</h3>
 		</div>
-		<%= f.label :タイトル %>
-		<%= f.text_field :title %>
+		<div class="panel-body">
+			<%= @link.url %>
+		</div>
 
-		<%= f.label :分類 %>
-			<%= f.collection_select :bunrui, Origin.where(user_id: User.find_by(id: session[:user_id])) + Origin.where(user_id: nil), :id, :content %>
 	</div>
-	<%= f.submit "更新", class: "btn btn-primary" %>
+	<%= f.label :タイトル %>
+	<%= f.text_field :title %>
+	<%= f.label :分類 %>
+	<%= f.collection_select :bunrui, @current_tag, :id, :content %>
+</div>
+
+<%= f.submit "更新", class: "btn btn-primary" %>
 <% end %>
-
-

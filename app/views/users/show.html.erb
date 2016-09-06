@@ -2,29 +2,31 @@
 	プロフィール
 </h1>
 <h4>
-	<span>Total：<%= pluralize(current_user.links.count, "link") %></h4>
-	<h4 class="prof_tag_num">
-		Total:
-		<%= pluralize(current_user.origins.count, "tags") %>
-	</h4>
+	<%= render 'shared/num' %>
+</h4>
+<h4 class="prof_tag_num">
+	Total:
+	<%= pluralize(current_user.origins.count, "tags") %>
+</h4>
 
-	<h3>
-		<div class="name">
-			<span class="glyphicon glyphicon-user edit-icon" aria-hidden="true"></span>
-			<%= @user.name %>
-		</div>
-	</h3>
-
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">メールアドレス</h3>
-		</div>
-		<div class="panel-body">
-			<%= @user.email %>
-		</div>
-		<div class="panel-heading">
-			<h3 class="panel-title">アカウント作成日</h3>
-		</div>
-		<div class="panel-body">
-			<%= @user.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+<h3>
+	<div class="name">
+		<span class="glyphicon glyphicon-user edit-icon" aria-hidden="true"></span>
+		<%= @user.name %>
 	</div>
+</h3>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">メールアドレス</h3>
+	</div>
+	<div class="panel-body">
+		<%= @user.email %>
+	</div>
+	<div class="panel-heading">
+		<h3 class="panel-title">アカウント作成日</h3>
+	</div>
+	<div class="panel-body">
+		<%= @user.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+	</div>
+</div>
