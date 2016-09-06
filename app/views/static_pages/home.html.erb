@@ -1,5 +1,6 @@
 <% if logged_in? %>
-<div class="container-fluid">
+	<div class="container-fluid">
+		<span>Total：<%= pluralize(current_user.links.count, "link") %>
 	<% img = "http://capture.heartrails.com/200x200/border?" %>
 	<% @links.each do |link| %>
 	<div class="row">
