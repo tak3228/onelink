@@ -8,6 +8,7 @@ class StaticPagesController < ApplicationController
       @links << link_temp.reverse if link_temp
     end
 
+
 		@link_box= []
 		@links.each do |link|
 			link.each do |k|

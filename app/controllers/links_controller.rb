@@ -32,7 +32,8 @@ class LinksController < ApplicationController
 			flash[:success] = 'リンクが作成されました'
 			redirect_to root_path
 		else
-			render 'new'
+			flash[:success] = "リンクの作成に失敗しました"
+			redirect_to new_link_path
 		end
 	end
 
